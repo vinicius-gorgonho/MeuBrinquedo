@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bcA-bc-VjZ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="KbW-uk-krb">
+            <objects>
+                <navigationController id="bcA-bc-VjZ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zRk-mR-XjE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="L3q-kh-6HR" kind="relationship" relationship="rootViewController" id="wmQ-KQ-vb3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gHj-aI-qeg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-309" y="35"/>
+        </scene>
+        <!--Lista de Brinquedos-->
+        <scene sceneID="N6d-ml-Cp8">
+            <objects>
+                <tableViewController id="L3q-kh-6HR" customClass="BrinquedoTableViewController" customModule="MeuBrinquedo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="QUf-5V-6lz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="tah-9W-IQN" detailTextLabel="gK3-eH-Ph5" style="IBUITableViewCellStyleValue1" id="bFj-1z-JtR">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bFj-1z-JtR" id="gon-LB-eSX">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tah-9W-IQN">
+                                            <rect key="frame" x="20" y="15" width="25" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gK3-eH-Ph5">
+                                            <rect key="frame" x="361" y="15" width="33" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="wHE-Vg-l5V" kind="show" id="IOQ-Rf-CUZ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="L3q-kh-6HR" id="ddq-hw-SzD"/>
+                            <outlet property="delegate" destination="L3q-kh-6HR" id="Rfe-Rm-NTY"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Lista de Brinquedos" id="AZZ-3i-uGW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="FSE-X8-ttP">
+                            <connections>
+                                <segue destination="wHE-Vg-l5V" kind="show" id="ems-9o-Ee2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pd3-I4-Mih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="596" y="35"/>
+        </scene>
+        <!--Form View Controller-->
+        <scene sceneID="NUz-Wj-Fe1">
+            <objects>
+                <viewController id="wHE-Vg-l5V" customClass="FormViewController" customModule="MeuBrinquedo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="31k-bJ-BAc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYL-sI-Ufe">
+                                <rect key="frame" x="0.0" y="88" width="414" height="334"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8AT-Lf-6ps">
+                                        <rect key="frame" x="5" y="0.0" width="410" height="326"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="msy-3o-Yfa">
+                                                <rect key="frame" x="5" y="8" width="400" height="244"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do Brinquedo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ImV-fr-OtE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="400" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="F2Y-55-aFu">
+                                                        <rect key="frame" x="0.0" y="40" width="400" height="32"/>
+                                                        <segments>
+                                                            <segment title="Novo"/>
+                                                            <segment title="Usado"/>
+                                                            <segment title="Precisa de Reparo"/>
+                                                        </segments>
+                                                    </segmentedControl>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do Doador" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oE4-0i-giz">
+                                                        <rect key="frame" x="0.0" y="81" width="400" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Endereco" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lJ1-8u-FZD" userLabel="Textfield Endereco">
+                                                        <rect key="frame" x="0.0" y="125" width="400" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telefone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dBt-Hl-pBk" userLabel="Textfield Telefone">
+                                                        <rect key="frame" x="0.0" y="169" width="400" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryZ-WB-Z76">
+                                                        <rect key="frame" x="0.0" y="213" width="400" height="31"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Cadastrar"/>
+                                                        <connections>
+                                                            <action selector="save:" destination="wHE-Vg-l5V" eventType="touchUpInside" id="NZw-jo-dXi"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="msy-3o-Yfa" firstAttribute="centerX" secondItem="8AT-Lf-6ps" secondAttribute="centerX" id="EYi-hD-UhV"/>
+                                            <constraint firstAttribute="trailing" secondItem="msy-3o-Yfa" secondAttribute="trailing" constant="5" id="rYI-0V-3gL"/>
+                                            <constraint firstItem="msy-3o-Yfa" firstAttribute="top" secondItem="8AT-Lf-6ps" secondAttribute="top" constant="8" id="vPx-C5-vjf"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="8AT-Lf-6ps" firstAttribute="top" secondItem="KYL-sI-Ufe" secondAttribute="top" id="3b0-W8-WOf"/>
+                                    <constraint firstItem="8AT-Lf-6ps" firstAttribute="height" secondItem="KYL-sI-Ufe" secondAttribute="height" multiplier="0.976048" id="cbG-Wj-kaS"/>
+                                    <constraint firstItem="8AT-Lf-6ps" firstAttribute="leading" secondItem="KYL-sI-Ufe" secondAttribute="leading" constant="5" id="ged-Td-JNR"/>
+                                    <constraint firstItem="8AT-Lf-6ps" firstAttribute="width" secondItem="KYL-sI-Ufe" secondAttribute="width" multiplier="0.990338" id="plS-ew-BdT"/>
+                                    <constraint firstItem="8AT-Lf-6ps" firstAttribute="bottom" secondItem="KYL-sI-Ufe" secondAttribute="bottomMargin" id="xXR-1a-xN2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jHV-6C-itE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KYL-sI-Ufe" firstAttribute="top" secondItem="jHV-6C-itE" secondAttribute="top" id="77E-1B-Lwh"/>
+                            <constraint firstItem="KYL-sI-Ufe" firstAttribute="trailing" secondItem="jHV-6C-itE" secondAttribute="trailing" id="hyV-zZ-GVg"/>
+                            <constraint firstItem="KYL-sI-Ufe" firstAttribute="leading" secondItem="jHV-6C-itE" secondAttribute="leading" id="scd-PC-vl1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ywP-NF-Z9w"/>
+                    <connections>
+                        <outlet property="botaoAddEdit" destination="ryZ-WB-Z76" id="dPL-qB-Xka"/>
+                        <outlet property="segmentedEstadoBrinquedo" destination="F2Y-55-aFu" id="jDn-4r-i9b"/>
+                        <outlet property="textFieldNome" destination="ImV-fr-OtE" id="Fdr-8K-9VX"/>
+                        <outlet property="textfieldEndereco" destination="lJ1-8u-FZD" id="FkH-me-ipu"/>
+                        <outlet property="textfieldNomeDoador" destination="oE4-0i-giz" id="Wbi-gI-zYx"/>
+                        <outlet property="textfieldTelefone" destination="dBt-Hl-pBk" id="jSg-aD-SHU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E8P-yC-aun" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1444.9275362318842" y="34.821428571428569"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ems-9o-Ee2"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
